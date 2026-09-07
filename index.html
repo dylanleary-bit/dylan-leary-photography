@@ -6,39 +6,109 @@
 <title>Dylan Leary Photography</title>
 <meta name="description" content="Photography portfolio by Dylan Leary.">
 <style>
-:root{--bg:#080808;--fg:#f4f4f1;--muted:#a0a09a;--line:#242424}
+:root{--bg:#070707;--fg:#f4f4f1;--muted:#9b9b96;--line:#242424}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}
-header{position:fixed;top:0;left:0;right:0;z-index:10;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(0,0,0,.82),transparent)}
+header{position:fixed;top:0;left:0;right:0;z-index:20;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(0,0,0,.86),rgba(0,0,0,0))}
 .brand{font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}nav{display:flex;gap:20px;font-size:12px;text-transform:uppercase;letter-spacing:.12em}
-.hero{min-height:92vh;position:relative;display:grid;align-items:end;background:#000;overflow:hidden}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.84),rgba(0,0,0,.12) 56%,rgba(0,0,0,.2))}
-.hero-copy{position:relative;z-index:2;padding:0 6vw 8vh;max-width:950px}.kicker{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#ddd}h1{font-size:clamp(46px,9vw,118px);line-height:.92;margin:14px 0 18px;letter-spacing:-.045em}.hero p{max-width:720px;color:#ddd;font-size:clamp(17px,2vw,24px);line-height:1.5}
-section{max-width:1450px;margin:auto;padding:84px 28px}h2{font-size:clamp(32px,4vw,56px);margin:0 0 12px}.section-copy{color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:30px}
-.grid{columns:3 320px;column-gap:14px}.card{break-inside:avoid;position:relative;overflow:hidden;background:#111;margin:0 0 14px;cursor:pointer}.card img{width:100%;height:auto;display:block;transition:.3s}.card:hover img{transform:scale(1.012);opacity:.92}.meta{position:absolute;left:0;right:0;bottom:0;padding:48px 18px 16px;background:linear-gradient(to top,rgba(0,0,0,.88),transparent);opacity:0;transition:.2s}.card:hover .meta{opacity:1}.meta strong{display:block;font-size:17px}.meta span{color:#c7c7c1;font-size:13px}
+.hero{min-height:88vh;position:relative;display:grid;align-items:end;background:#000;overflow:hidden}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.94}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.08) 55%,rgba(0,0,0,.16) 100%)}
+.hero-copy{position:relative;z-index:2;padding:0 5vw 7vh;max-width:980px}.kicker{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#ddd}h1{font-size:clamp(46px,8.5vw,112px);line-height:.92;margin:14px 0 18px;letter-spacing:-.045em}.hero p{max-width:720px;color:#ddd;font-size:clamp(17px,2vw,23px);line-height:1.5}
+section{max-width:1500px;margin:auto;padding:78px 28px}h2{font-size:clamp(32px,4vw,56px);margin:0 0 12px}.section-copy{color:var(--muted);max-width:720px;line-height:1.7;margin-bottom:30px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}.filter{border:1px solid #303030;background:transparent;color:#c8c8c3;padding:9px 13px;border-radius:999px;cursor:pointer;font-size:12px}.filter.active{background:#eee;color:#111;border-color:#eee}
+.grid{columns:3 320px;column-gap:14px}.card{break-inside:avoid;position:relative;overflow:hidden;background:#111;margin:0 0 14px;cursor:pointer}.card img{width:100%;height:auto;display:block;transition:transform .28s ease,opacity .28s ease}.card:hover img{transform:scale(1.01);opacity:.94}.meta{position:absolute;left:0;right:0;bottom:0;padding:46px 16px 14px;background:linear-gradient(to top,rgba(0,0,0,.82),transparent);opacity:0;transition:.2s}.card:hover .meta{opacity:1}.meta strong{display:block;font-size:15px}.meta span{color:#c7c7c1;font-size:12px}
 .about{border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:55px}.about p{color:#bdbdb7;line-height:1.8;font-size:18px}.btn{display:inline-block;border:1px solid #eee;padding:12px 16px;margin-top:12px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 footer{border-top:1px solid var(--line);padding:28px;color:#858580;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;padding:24px}.modal.open{display:flex}.modal img{max-width:94vw;max-height:90vh;object-fit:contain}.close{position:fixed;right:18px;top:10px;background:none;border:0;color:white;font-size:40px;cursor:pointer}
-@media(max-width:760px){header{padding:14px 16px}nav a:first-child{display:none}.hero-copy{padding:0 20px 7vh}section{padding:58px 16px}.grid{columns:1}.about{grid-template-columns:1fr;gap:18px}.meta{opacity:1}}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.97);display:none;align-items:center;justify-content:center;padding:24px}.modal.open{display:flex}.modal img{max-width:96vw;max-height:92vh;object-fit:contain}.close{position:fixed;right:18px;top:10px;background:none;border:0;color:white;font-size:40px;cursor:pointer}
+@media(max-width:760px){header{padding:14px 16px}nav a:first-child{display:none}.hero{min-height:76vh}.hero-copy{padding:0 20px 6vh}section{padding:56px 16px}.grid{columns:1}.about{grid-template-columns:1fr;gap:18px}.meta{opacity:1}}
 </style>
 </head>
 <body>
 <header><a class="brand" href="#top">Dylan Leary Photography</a><nav><a href="#work">Portfolio</a><a href="#about">About</a><a href="https://www.instagram.com/dylanlearyphotography/?hl=en" target="_blank" rel="noopener">Instagram</a></nav></header>
 <main id="top">
-<section class="hero" style="max-width:none;padding:0"><img src="assets/photo-10.jpg" alt="Featured photograph"><div class="hero-copy"><div class="kicker">Australia · Street · Landscape · After Dark</div><h1>Dylan Leary<br>Photography</h1><p>Documentary, urban and landscape photography focused on atmosphere, weather, place and the overlooked moments in between.</p></div></section>
-<section id="work"><h2>Selected Work</h2><p class="section-copy">A broader live portfolio including the Website collection from Google Drive. Click any image to view it larger.</p><div class="grid" id="grid"></div></section>
+<section class="hero" style="max-width:none;padding:0"><img src="assets/portfolio-01.jpg" alt="Featured Dylan Leary photograph"><div class="hero-copy"><div class="kicker">Australia · Street · Landscape · After Dark</div><h1>Dylan Leary<br>Photography</h1><p>Documentary, urban and landscape photography focused on atmosphere, weather, place and the overlooked moments in between.</p></div></section>
+<section id="work">
+<h2>Portfolio</h2>
+<p class="section-copy">The larger collection now includes the photographs supplied here plus the Website collection from Google Drive. Click any photograph for a larger view.</p>
+<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="uploaded">Uploaded Portfolio</button><button class="filter" data-filter="drive">Website Archive</button></div>
+<div class="grid" id="grid"></div>
+</section>
 <section id="about" class="about"><div><div class="kicker">About</div><h2>Photographs of place, weather and everyday life.</h2></div><div><p>Dylan Leary is an Australian photographer working across black-and-white documentary photography, street scenes, landscapes, architecture and dramatic weather.</p><a class="btn" href="https://www.instagram.com/dylanlearyphotography/?hl=en" target="_blank" rel="noopener">@dylanlearyphotography</a></div></section>
 </main>
 <footer><span>© Dylan Leary Photography</span><span>Australia</span></footer>
 <div class="modal" id="modal"><button class="close" id="close">×</button><img id="modalImg" alt=""></div>
 <script>
+const uploaded=[
+['assets/portfolio-01.jpg','Portfolio 01'],
+['assets/portfolio-02.jpg','Portfolio 02'],
+['assets/portfolio-03.jpg','Portfolio 03'],
+['assets/portfolio-04.jpg','Portfolio 04'],
+['assets/portfolio-05.jpg','Portfolio 05'],
+['assets/portfolio-06.jpg','Portfolio 06'],
+['assets/portfolio-07.jpg','Portfolio 07'],
+['assets/portfolio-08.jpg','Portfolio 08'],
+['assets/portfolio-09.jpg','Portfolio 09'],
+['assets/portfolio-11.jpg','Portfolio 11'],
+['assets/portfolio-12.jpg','Portfolio 12'],
+['assets/portfolio-13.jpg','Portfolio 13'],
+['assets/portfolio-14.jpg','Portfolio 14'],
+['assets/portfolio-16.jpg','Portfolio 16'],
+['assets/portfolio-17.jpg','Portfolio 17'],
+['assets/portfolio-18.jpg','Portfolio 18'],
+['assets/portfolio-19.jpg','Portfolio 19'],
+['assets/portfolio-21.jpg','Portfolio 21'],
+['assets/portfolio-22.jpg','Portfolio 22'],
+['assets/portfolio-23.jpg','Portfolio 23'],
+['assets/portfolio-24.jpg','Portfolio 24'],
+['assets/portfolio-26.jpg','Portfolio 26'],
+['assets/portfolio-27.jpg','Portfolio 27'],
+['assets/portfolio-28.jpg','Portfolio 28'],
+['assets/portfolio-30.jpg','Portfolio 30'],
+['assets/portfolio-31.jpg','Portfolio 31'],
+['assets/portfolio-33.jpg','Portfolio 33'],
+['assets/portfolio-34.jpg','Portfolio 34'],
+['assets/portfolio-35.jpg','Portfolio 35'],
+['assets/portfolio-36.jpg','Portfolio 36'],
+['assets/portfolio-37.jpg','Portfolio 37'],
+['assets/portfolio-38.jpg','Portfolio 38'],
+['assets/portfolio-39.jpg','Portfolio 39'],
+['assets/portfolio-40.jpg','Portfolio 40'],
+['assets/portfolio-41.jpg','Portfolio 41'],
+['assets/portfolio-42.jpg','Portfolio 42'],
+['assets/portfolio-43.jpg','Portfolio 43'],
+['assets/portfolio-44.jpg','Portfolio 44'],
+['assets/portfolio-45.jpg','Portfolio 45'],
+['assets/portfolio-46.jpg','Portfolio 46'],
+['assets/portfolio-47.jpg','Portfolio 47'],
+['assets/portfolio-48.jpg','Portfolio 48'],
+['assets/portfolio-49.jpg','Portfolio 49'],
+['assets/portfolio-50.jpg','Portfolio 50'],
+['assets/portfolio-51.jpg','Portfolio 51'],
+['assets/portfolio-52.jpg','Portfolio 52'],
+['assets/portfolio-53.jpg','Portfolio 53'],
+['assets/portfolio-54.jpg','Portfolio 54'],
+['assets/portfolio-55.jpg','Portfolio 55']
+];
 const drive=[
-['1aDcSroxAxtPz6vKPlsnOTVWaZol1H817','IMG 2020-10-21'],['1_YX1cqeUxVAnFg9bwu77H9MidElmzeZb','IMG 2020-09-21'],['1aKtGg9J-oGjHkJx4YKWRC63ODYdkbD5x','IMG 2020-08-22'],['1_we2KaTm0BzP_VGO_LVB-4LPSRJ7kYBZ','IMG 2020-10-14'],['1aD-lRWuI1J0TCLUqi9Fyb8rNCCsWuSVG','IMG 2020-08-08'],['1a4NzQ2ywNB_TGg-bktBpCmHGMLKFgjpj','IMG 2020-08-29'],['1a0rUhLaT-c0fGKb3UO2kQFLPKD7edZ_F','IMG 2020-08-15'],['1_wnwQlgNpGGbqB34hK1sPFN9h5lz-HTJ','IMG 2020-09-24'],['1_mQqDYH9KS4yKlVotqghV4eXvFlsj40C','IMG 2020-08-18'],['1_sMcgP2P09gF665wi9ifwv0rD1jrkmJ_','IMG 2020-09-05'],['1_YNZaqP76TKsuENX6g3JjofeqXG_lA44','IMG 2020-08-01'],['1_KnCqf-NQyO61RGChTa4BUmrfZIur2vG','IMG 2020-08-16'],['1_PUBB-cQ85DoeazYA4E6IN0WWki1Ds9U','IMG 2020-10-01'],['1_O-47pI--6B5A-5SdITpgUH0qBQ5EYhJ','IMG 2020-09-23'],['1_FZr1VVYghimlTGq1z86vBRohlIiFSE_','IMG 2020-07-31']];
-const repo=[['assets/photo-10.jpg','Lightning over Port Phillip Bay'],['assets/photo-32.jpg','Cape Schanck Lighthouse under the Stars'],['assets/photo-55.jpg','Kinglake in Fog']];
-const grid=document.getElementById('grid');
-function add(src,title,location='Australia') { const a=document.createElement('article'); a.className='card'; a.innerHTML=`<img loading="lazy" src="${src}" alt="${title}"><div class="meta"><strong>${title}</strong><span>${location}</span></div>`; a.onclick=()=>{modalImg.src=src;modal.classList.add('open');document.body.style.overflow='hidden'}; grid.appendChild(a); }
-repo.forEach(x=>add(x[0],x[1], x[1].includes('Kinglake')?'Kinglake, Victoria':x[1].includes('Cape Schanck')?'Cape Schanck, Victoria':'Mornington Peninsula, Victoria'));
-drive.forEach(x=>add(`https://drive.google.com/thumbnail?id=${x[0]}&sz=w2400`,x[1],'Website collection · 2020'));
-function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
-close.onclick=closeModal;modal.onclick=e=>{if(e.target===modal)closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+['assets/drive-01.jpg','Website Archive 01'],
+['https://drive.google.com/thumbnail?id=1_YX1cqeUxVAnFg9bwu77H9MidElmzeZb&sz=w2400','Website Archive 02'],
+['https://drive.google.com/thumbnail?id=1aKtGg9J-oGjHkJx4YKWRC63ODYdkbD5x&sz=w2400','Website Archive 03'],
+['https://drive.google.com/thumbnail?id=1_we2KaTm0BzP_VGO_LVB-4LPSRJ7kYBZ&sz=w2400','Website Archive 04'],
+['https://drive.google.com/thumbnail?id=1aD-lRWuI1J0TCLUqi9Fyb8rNCCsWuSVG&sz=w2400','Website Archive 05'],
+['https://drive.google.com/thumbnail?id=1a4NzQ2ywNB_TGg-bktBpCmHGMLKFgjpj&sz=w2400','Website Archive 06'],
+['https://drive.google.com/thumbnail?id=1a0rUhLaT-c0fGKb3UO2kQFLPKD7edZ_F&sz=w2400','Website Archive 07'],
+['https://drive.google.com/thumbnail?id=1_wnwQlgNpGGbqB34hK1sPFN9h5lz-HTJ&sz=w2400','Website Archive 08'],
+['https://drive.google.com/thumbnail?id=1_mQqDYH9KS4yKlVotqghV4eXvFlsj40C&sz=w2400','Website Archive 09'],
+['https://drive.google.com/thumbnail?id=1_sMcgP2P09gF665wi9ifwv0rD1jrkmJ_&sz=w2400','Website Archive 10'],
+['https://drive.google.com/thumbnail?id=1_YNZaqP76TKsuENX6g3JjofeqXG_lA44&sz=w2400','Website Archive 11'],
+['https://drive.google.com/thumbnail?id=1_KnCqf-NQyO61RGChTa4BUmrfZIur2vG&sz=w2400','Website Archive 12'],
+['https://drive.google.com/thumbnail?id=1_PUBB-cQ85DoeazYA4E6IN0WWki1Ds9U&sz=w2400','Website Archive 13'],
+['https://drive.google.com/thumbnail?id=1_O-47pI--6B5A-5SdITpgUH0qBQ5EYhJ&sz=w2400','Website Archive 14'],
+['https://drive.google.com/thumbnail?id=1_FZr1VVYghimlTGq1z86vBRohlIiFSE_&sz=w2400','Website Archive 15']
+];
+const grid=document.getElementById('grid'),modal=document.getElementById('modal'),modalImg=document.getElementById('modalImg');
+function card(src,title,group){const a=document.createElement('article');a.className='card';a.dataset.group=group;a.innerHTML=`<img loading="lazy" src="${src}" alt="${title}"><div class="meta"><strong>${title}</strong><span>Dylan Leary Photography</span></div>`;a.onclick=()=>{modalImg.src=src;modal.classList.add('open');document.body.style.overflow='hidden'};return a}
+function render(filter='all'){grid.innerHTML='';if(filter!=='drive')uploaded.forEach(x=>grid.appendChild(card(x[0],x[1],'uploaded')));if(filter!=='uploaded')drive.forEach(x=>grid.appendChild(card(x[0],x[1],'drive')))}
+render();
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter)});
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}document.getElementById('close').onclick=closeModal;modal.onclick=e=>{if(e.target===modal)closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
-</body>
-</html>
+</body></html>
