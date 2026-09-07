@@ -27,7 +27,7 @@ footer{border-top:1px solid var(--line);padding:28px;color:#858580;font-size:12p
 <section class="hero" style="max-width:none;padding:0"><img src="assets/portfolio-01.jpg" alt="Featured Dylan Leary photograph"><div class="hero-copy"><div class="kicker">Australia · Street · Landscape · After Dark</div><h1>Dylan Leary<br>Photography</h1><p>Documentary, urban and landscape photography focused on atmosphere, weather, place and the overlooked moments in between.</p></div></section>
 <section id="work">
 <h2>Portfolio</h2>
-<p class="section-copy">The larger collection now includes the photographs supplied here plus the Website collection from Google Drive. Click any photograph for a larger view.</p>
+<p class="section-copy">A complete selection of Dylan Leary photographs, including the Website archive. Click any photograph for a larger view.</p>
 <div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="uploaded">Uploaded Portfolio</button><button class="filter" data-filter="drive">Website Archive</button></div>
 <div class="grid" id="grid"></div>
 </section>
@@ -89,20 +89,20 @@ const uploaded=[
 ];
 const drive=[
 ['assets/drive-01.jpg','Website Archive 01'],
-['https://drive.google.com/thumbnail?id=1_YX1cqeUxVAnFg9bwu77H9MidElmzeZb&sz=w2400','Website Archive 02'],
-['https://drive.google.com/thumbnail?id=1aKtGg9J-oGjHkJx4YKWRC63ODYdkbD5x&sz=w2400','Website Archive 03'],
-['https://drive.google.com/thumbnail?id=1_we2KaTm0BzP_VGO_LVB-4LPSRJ7kYBZ&sz=w2400','Website Archive 04'],
-['https://drive.google.com/thumbnail?id=1aD-lRWuI1J0TCLUqi9Fyb8rNCCsWuSVG&sz=w2400','Website Archive 05'],
-['https://drive.google.com/thumbnail?id=1a4NzQ2ywNB_TGg-bktBpCmHGMLKFgjpj&sz=w2400','Website Archive 06'],
-['https://drive.google.com/thumbnail?id=1a0rUhLaT-c0fGKb3UO2kQFLPKD7edZ_F&sz=w2400','Website Archive 07'],
-['https://drive.google.com/thumbnail?id=1_wnwQlgNpGGbqB34hK1sPFN9h5lz-HTJ&sz=w2400','Website Archive 08'],
-['https://drive.google.com/thumbnail?id=1_mQqDYH9KS4yKlVotqghV4eXvFlsj40C&sz=w2400','Website Archive 09'],
-['https://drive.google.com/thumbnail?id=1_sMcgP2P09gF665wi9ifwv0rD1jrkmJ_&sz=w2400','Website Archive 10'],
-['https://drive.google.com/thumbnail?id=1_YNZaqP76TKsuENX6g3JjofeqXG_lA44&sz=w2400','Website Archive 11'],
-['https://drive.google.com/thumbnail?id=1_KnCqf-NQyO61RGChTa4BUmrfZIur2vG&sz=w2400','Website Archive 12'],
-['https://drive.google.com/thumbnail?id=1_PUBB-cQ85DoeazYA4E6IN0WWki1Ds9U&sz=w2400','Website Archive 13'],
-['https://drive.google.com/thumbnail?id=1_O-47pI--6B5A-5SdITpgUH0qBQ5EYhJ&sz=w2400','Website Archive 14'],
-['https://drive.google.com/thumbnail?id=1_FZr1VVYghimlTGq1z86vBRohlIiFSE_&sz=w2400','Website Archive 15']
+['assets/drive-02.jpg','Website Archive 02'],
+['assets/drive-03.jpg','Website Archive 03'],
+['assets/drive-04.jpg','Website Archive 04'],
+['assets/drive-05.jpg','Website Archive 05'],
+['assets/drive-06.jpg','Website Archive 06'],
+['assets/drive-07.jpg','Website Archive 07'],
+['assets/drive-08.jpg','Website Archive 08'],
+['assets/drive-09.jpg','Website Archive 09'],
+['assets/drive-10.jpg','Website Archive 10'],
+['assets/drive-11.jpg','Website Archive 11'],
+['assets/drive-12.jpg','Website Archive 12'],
+['assets/drive-13.jpg','Website Archive 13'],
+['assets/drive-14.jpg','Website Archive 14'],
+['assets/drive-15.jpg','Website Archive 15']
 ];
 const grid=document.getElementById('grid'),modal=document.getElementById('modal'),modalImg=document.getElementById('modalImg');
 function card(src,title,group){const a=document.createElement('article');a.className='card';a.dataset.group=group;a.innerHTML=`<img loading="lazy" src="${src}" alt="${title}"><div class="meta"><strong>${title}</strong><span>Dylan Leary Photography</span></div>`;a.onclick=()=>{modalImg.src=src;modal.classList.add('open');document.body.style.overflow='hidden'};return a}
